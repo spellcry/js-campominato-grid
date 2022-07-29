@@ -13,11 +13,22 @@ function clickHandler(event) {
     console.log(square.innerHTML);
 }
 
+// funzione che cancella la tabella precedente
+// ed elimina gli eventListener
+function resetTabella(tabellone) {
+    let tabChild = tabellone.firstChild;
+    while ( tabChild != null ) {
+        tabChild.removeEventListener('click', clickHandler);
+        tabChild = tabChild.nextElementSibling;
+    }
+    tabellone.innerHTML = '';
+}
+
 // funzione che genera una lista
 function generaLista() {
     // preparo le variabili
     const tabelloneEl = document.querySelector('.tabellone');
-    tabelloneEl.innerHTML = '';
+    resetTabella(tabelloneEl);
     const difficulty = parseInt(document.querySelector('.main-header__difficulty').value);
     let numCelleRiga = 7;
     if ( difficulty === 1 ) {
