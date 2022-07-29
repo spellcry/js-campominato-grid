@@ -17,13 +17,19 @@ function generaLista() {
     // preparo le variabili
     const tabelloneEl = document.querySelector('.tabellone');
     tabelloneEl.innerHTML = '';
-    const numCelleRiga = 10;
+    const difficulty = parseInt(document.querySelector('.main-header__difficulty').value);
+    let numCelleRiga = 7;
+    if ( difficulty === 1 ) {
+        numCelleRiga = 10;
+    }
+    if ( difficulty === 2 ) {
+        numCelleRiga = 9;
+    }
     const numCelleTot = numCelleRiga ** 2;
     // setto lo stile in base al numero di celle per una riga
     tabelloneEl.style.gridTemplateColumns = `repeat(${numCelleRiga}, 1fr)`;
     // genero lista
     for ( let i = 0; i < numCelleTot; i++ ) {
-        console.log('ciao')
         const squareEl = getSquareElement();
         squareEl.append(i + 1);
         squareEl.addEventListener('click', clickHandler);
