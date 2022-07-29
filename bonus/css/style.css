@@ -24,9 +24,7 @@ body {
 
 .main-content {
     flex-grow: 1;
-    /* min-height: calc(100vh - 69px); */
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     background-color: var(--main-color);
 }
