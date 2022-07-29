@@ -1,0 +1,94 @@
+/* #region Root */
+:root {
+    --main-color: #7FFFD4;
+}
+
+/* #endregion Root */
+
+/* #region Regole Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* #endregion Regole Reset */
+
+/* #region Regole Layout */
+body {
+    height: 100vh;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex-grow: 1;
+    /* min-height: calc(100vh - 69px); */
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: var(--main-color);
+}
+
+/* #endregion Regole Layout */
+
+/* #region Utility */
+.clicked {
+    background-color: darkorange;
+}
+
+/* #endregion Utility */
+
+/* #region Main Header */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.main-header__btn {
+    align-self: center;
+    padding: 0.25rem 1rem;
+}
+
+/* #endregion Main Header */
+
+/* #region Tabellone */
+.tabellone {
+    flex-basis: 100%;
+    max-width: 768px;
+    margin-inline: auto;
+    display: grid;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* #endregion Tabellone */
+
+/* #region Square */
+.square {
+    height: 100%;
+    aspect-ratio: 1;
+    border: 2px solid currentColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* #endregion Square */
+
+/* #region Main Footer */
+.main-footer {
+    padding: 1rem;
+    font-size: 0.8rem;
+}
+
+.main-footer i {
+    font-size: 0.6rem;
+}
+
+/* #endregion Main Footer */
