@@ -10,6 +10,7 @@ function getSquareElement() {
 function clickHandler(event) {
     const square = this;
     square.classList.toggle('clicked');
+    console.log(square.innerHTML);
 }
 
 // funzione che genera una lista
