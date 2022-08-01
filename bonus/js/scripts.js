@@ -24,19 +24,26 @@ function resetTabella(tabellone) {
     tabellone.innerHTML = '';
 }
 
+// funzione che calcola il numero di celle per riga
+// ritorna un numero intero
+function getNumCellePerRiga(){
+    const difficulty = document.querySelector('.main-header__difficulty').value;
+    let numCelle = 7;
+    if ( difficulty === '1' ) {
+        numCelle = 10;
+    }
+    if ( difficulty === '2' ) {
+        numCelle = 9;
+    }
+    return numCelle;
+}
+
 // funzione che genera una lista
 function generaLista() {
     // preparo le variabili
     const tabelloneEl = document.querySelector('.tabellone');
     resetTabella(tabelloneEl);
-    const difficulty = document.querySelector('.main-header__difficulty').value;
-    let numCelleRiga = 7;
-    if ( difficulty === '1' ) {
-        numCelleRiga = 10;
-    }
-    if ( difficulty === '2' ) {
-        numCelleRiga = 9;
-    }
+    let numCelleRiga = getNumCellePerRiga();
     const numCelleTot = numCelleRiga ** 2;
     // setto lo stile in base al numero di celle per una riga
     tabelloneEl.style.gridTemplateColumns = `repeat(${numCelleRiga}, 1fr)`;
