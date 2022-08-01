@@ -29,12 +29,12 @@ function generaLista() {
     // preparo le variabili
     const tabelloneEl = document.querySelector('.tabellone');
     resetTabella(tabelloneEl);
-    const difficulty = parseInt(document.querySelector('.main-header__difficulty').value);
+    const difficulty = document.querySelector('.main-header__difficulty').value;
     let numCelleRiga = 7;
-    if ( difficulty === 1 ) {
+    if ( difficulty === '1' ) {
         numCelleRiga = 10;
     }
-    if ( difficulty === 2 ) {
+    if ( difficulty === '2' ) {
         numCelleRiga = 9;
     }
     const numCelleTot = numCelleRiga ** 2;
