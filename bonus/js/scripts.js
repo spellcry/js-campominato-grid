@@ -8,7 +8,7 @@ function getSquareElement() {
 }
 
 // funzione che gestisce il click
-function clickHandler(event) {
+function clickHandler() {
     const square = this;
     square.classList.toggle('clicked');
     console.log(square.innerHTML);
