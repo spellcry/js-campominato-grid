@@ -2,6 +2,7 @@
 // restituisce un dom element
 function getSquareElement() {
     const square = document.createElement('div');
+    square.addEventListener('click', clickHandler);
     square.className = 'square';
     return square; 
 }
@@ -51,7 +52,6 @@ function generaLista() {
     for ( let i = 0; i < numCelleTot; i++ ) {
         const squareEl = getSquareElement();
         squareEl.append(i + 1);
-        squareEl.addEventListener('click', clickHandler);
         tabelloneEl.append(squareEl);
     }
 }
